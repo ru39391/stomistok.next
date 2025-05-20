@@ -1,6 +1,6 @@
-import { helpers } from '../../utils';
+import { fetchers } from '../../utils';
 import 'server-only';
 
-const fetchHeaderData = async () => await helpers.fetchData('header');
+const fetchHeaderData = async () => await fetchers.fetchData('header');
 
 export default fetchHeaderData;
