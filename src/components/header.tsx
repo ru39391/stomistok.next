@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { fetchHeaderData } from '../api';
 import { helpers } from '../utils';
-import type { TDefaultData, TDefaultArr } from '../utils/types';
+import type { TDefaultData, TNav } from '../utils/types';
 
 import Logo from './logo';
 import Nav from './nav';
@@ -14,7 +14,7 @@ const Header = async () => {
     data: TDefaultData | undefined, counter: number
   ): string[] => data ? Object.values({ ...data }) : [...Array(counter)].map(() => '');
 
-  const navItems = nav ? [...nav as TDefaultArr] : [] as TDefaultArr;
+  const navItems = nav ? [...nav as TNav] : [] as TNav;
   const [city, address] = handleHeaderValue(addressData as TDefaultData, 2);
   const [url, name] = handleHeaderValue(site as TDefaultData, 2);
   const [mainPhone, extraPhone, mobilePhone] = handleHeaderValue(phones as TDefaultData, 3);
